@@ -2,31 +2,63 @@
 @model IndexModel
 @{
     ViewData["Title"] = "Home page";
+    Layout = null;
 }
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login</title>
-    <link Rel="stylesheet" href="~/css/LoginPage.css" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'bus-dark': '#3B0F0F',
+                        'bus-gold': '#FFD700',
+                    },
+                    fontFamily: {
+                        'irish': ['"Irish Grover"', 'cursive'],
+                    }
+                }
+            }
+        }
+    </script>
 </head>
-<body>
 
-    <div class="login-container">
-        <h1>Login</h1>
-        <form method="post">
-            <label>Username</label>
-            <input type="text" name="Username" class="input-field">
-            <label>Password</label>
-            <input type="password" name="Password" class="input-field">
-            <div class="button-container">
-                <a href="/Signup/Signup" class="btn">Sign up</a>
-                <button type="submit" class="btn">Enter</button>
+<div class="min-h-screen bg-[#591B1B] flex items-center justify-center p-4">
+    <div class="w-full max-w-md space-y-8">
+        <h1 class="text-4xl font-bold text-center text-[#FFD700] font-irish">Login</h1>
+
+        <form method="post" class="space-y-6">
+            <div class="space-y-2">
+                <label class="block text-lg font-medium text-[#FFD700] font-irish">Username</label>
+                <input type="text"
+                       name="Username"
+                       class="w-full px-4 py-2 bg-gray-100/90 rounded-md focus:outline-none focus:ring-2 focus:ring-[#FFD700]"
+                       required>
             </div>
-        </form> 
-    </div>
 
-</body>
-</html>
+            <div class="space-y-2">
+                <label class="block text-lg font-medium text-[#FFD700] font-irish">Password</label>
+                <input type="password"
+                       name="Password"
+                       class="w-full px-4 py-2 bg-gray-100/90 rounded-md focus:outline-none focus:ring-2 focus:ring-[#FFD700]"
+                       required>
+            </div>
+
+            <div class="flex justify-center gap-4 pt-4">
+                <a href="/Signup/Signup"
+                   class="px-6 py-2 bg-[#FFD700] text-[#591B1B] rounded-full hover:bg-opacity-90 transition-all duration-300 font-large font-irish">
+                    Sign up
+                </a>
+                <button type="submit"
+                        class="px-6 py-2 bg-[#FFD700] text-[#591B1B] rounded-full hover:bg-opacity-90 transition-all duration-300 font-large font-irish">
+                    Enter
+                </button>
+            </div>
+        </form>
+    </div>
+</div>

@@ -17,7 +17,7 @@ namespace OnlineBussen.Pages.Account
         public AccountModel(IConfiguration configuration)
         {
             _configuration = configuration;
-           sadksal
+           
         }
         public async Task<IActionResult> OnGetAsync()
         {
