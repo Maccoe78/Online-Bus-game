@@ -1,0 +1,37 @@
+﻿@page
+@model OnlineBussen.Pages.Settings.SettingsModel
+@{
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Account Page</title>
+    <link rel="stylesheet" href="~/css/AccountPage.css">
+</head>
+<body>
+    <div class="sidebar">
+        <div class="profile-section">
+            <img src="~/css/Sjors.jpg" alt="Profile Icon" class="profile-img">
+            <p>Username</p>
+        </div>
+        <nav>
+            <ul>
+                <li class="AccountText"><button class="AccountButton" onclick="window.location.href='/Account/Account';">Account</button></li>
+                <li class="LobbyText"><button class="LobbyButton" onclick="window.location.href='/Lobby/Lobby';">Lobbys</button></li>
+                <li class="SettingsText"><button class="SettingsButton" onclick="window.location.href='/Settings/Settings';">Settings</button></li>
+            </ul>
+        </nav>
+        <button class="logout" onclick="window.location.href='/Index';">Logout</button>
+    </div>
+
+    <div class="content">
+        <h1>Settings</h1>
+        <div class="profile">
+            <p>Working progress</p>
+        </div>
+    </div>
+</body>
+</html>

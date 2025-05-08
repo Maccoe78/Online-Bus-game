@@ -1,0 +1,48 @@
+﻿body {
+    background-color: #651d1d;
+    display: flex;
+    font-family: 'Irish Grover', cursive;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.login-container {
+    text-align: center;
+    color: #f4d03f;
+}
+
+    .login-container h1 {
+        font-size: 2.5em;
+    }
+
+.input-field {
+    display: block;
+    width: 250px;
+    padding: 10px;
+    margin: 10px auto;
+    border: none;
+    border-radius: 15px;
+    background: #ddd;
+    font-size: 1em;
+}
+.button-container {
+    width: 300px;
+    display: flex;
+    justify-content: space-between;
+    margin-top: 10px;
+}
+
+.btn {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    background-color: #ffd700;
+    cursor: pointer;
+    text-decoration: none;
+    color: black;
+}
+
+    .btn:hover {
+        background-color: #e4c13f;
+    }

@@ -1,0 +1,30 @@
+﻿@page
+@model OnlineBussen.Pages.Signup.SignupModel
+@{
+    ViewData["Title"] = "Signup";
+}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link Rel="stylesheet" href="~/css/LoginPage.css" />
+</head>
+<body>
+
+    <div class="login-container">
+        <h1>Signup</h1>
+        <form method="post">
+            <label>Username</label>
+            <input type="text" class="input-field" asp-for="User.Username">
+            <label>Password</label>
+            <input type="password" class="input-field" asp-for="User.Password">
+            <div>
+                <a href="/Index" class="btn">Back to login</a>
+                <button type="submit" class="btn">Signup</button>
+            </div>
+        </form>
+    </div>
+</body>
+</html>
