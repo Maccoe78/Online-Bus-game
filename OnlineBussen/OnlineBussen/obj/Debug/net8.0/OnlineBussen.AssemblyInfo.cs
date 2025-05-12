@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("OnlineBussen")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+9da15ed33f857e2b9f9acf4594f3d41bd998f6d2")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+bc0934f3b2eaca392cb5d5f62d898cb58ac3497f")]
 [assembly: System.Reflection.AssemblyProductAttribute("OnlineBussen")]
 [assembly: System.Reflection.AssemblyTitleAttribute("OnlineBussen")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
