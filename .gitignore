@@ -2,7 +2,31 @@
 # This .gitignore file was automatically created by Microsoft(R) Visual Studio.
 ################################################################################
 
-/OnlineBussen/.vs/OnlineBussen/FileContentIndex/85cf7c0b-093e-4a06-9562-86e86a7cd174.vsidx
-/OnlineBussen/.vs/OnlineBussen/FileContentIndex/d9219324-ad6c-42f4-b58c-eb7923631c66.vsidx
-/OnlineBussen/.vs/OnlineBussen/FileContentIndex/742aa19b-55f3-4dd9-a16f-5eeb79eb338b.vsidx
-/OnlineBussen/.vs/OnlineBussen/FileContentIndex
+## Visual Studio files
+.vs/
+*.vsidx
+[Bb]in/
+[Oo]bj/
+[Dd]ebug/
+[Rr]elease/
+
+## User-specific files
+*.suo
+*.user
+*.userosscache
+*.sln.docstates
+
+## Build results
+[Dd]ebug/
+[Dd]ebugPublic/
+[Rr]elease/
+[Rr]eleases/
+x64/
+x86/
+[Aa][Rr][Mm]/
+[Aa][Rr][Mm]64/
+bld/
+[Bb]in/
+[Oo]bj/
+[Ll]og/
+[Ll]ogs/
