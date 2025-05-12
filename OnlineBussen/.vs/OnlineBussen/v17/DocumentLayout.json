@@ -1,46 +1,42 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "C:\\Users\\Mac\\OneDrive - Office 365 Fontys\\Documenten\\LEERJAAR 1\\Individual project\\Bussen code\\OnlineBussen\\",
+  "WorkspaceRootPath": "C:\\Users\\Mac\\OneDrive - Office 365 Fontys\\Documenten\\LEERJAAR 1\\Individual project\\Bussen code\\Online-Bus-game\\OnlineBussen\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{A3D3C119-7BAE-40F6-82AA-5B5EF0143947}|OnlineBussen\\OnlineBussen.csproj|c:\\users\\mac\\onedrive - office 365 fontys\\documenten\\leerjaar 1\\individual project\\bussen code\\onlinebussen\\onlinebussen\\pages\\account\\account.cshtml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A3D3C119-7BAE-40F6-82AA-5B5EF0143947}|OnlineBussen\\OnlineBussen.csproj|solutionrelative:onlinebussen\\pages\\account\\account.cshtml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A3D3C119-7BAE-40F6-82AA-5B5EF0143947}|OnlineBussen\\OnlineBussen.csproj|c:\\users\\mac\\onedrive - office 365 fontys\\documenten\\leerjaar 1\\individual project\\bussen code\\onlinebussen\\onlinebussen\\pages\\account\\account.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{A3D3C119-7BAE-40F6-82AA-5B5EF0143947}|OnlineBussen\\OnlineBussen.csproj|solutionrelative:onlinebussen\\pages\\account\\account.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A3D3C119-7BAE-40F6-82AA-5B5EF0143947}|OnlineBussen\\OnlineBussen.csproj|c:\\users\\mac\\onedrive - office 365 fontys\\documenten\\leerjaar 1\\individual project\\bussen code\\onlinebussen\\onlinebussen\\pages\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "AbsoluteMoniker": "D:0:0:{A3D3C119-7BAE-40F6-82AA-5B5EF0143947}|OnlineBussen\\OnlineBussen.csproj|c:\\users\\mac\\onedrive - office 365 fontys\\documenten\\leerjaar 1\\individual project\\bussen code\\online-bus-game\\onlinebussen\\onlinebussen\\pages\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{A3D3C119-7BAE-40F6-82AA-5B5EF0143947}|OnlineBussen\\OnlineBussen.csproj|solutionrelative:onlinebussen\\pages\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{A3D3C119-7BAE-40F6-82AA-5B5EF0143947}|OnlineBussen\\OnlineBussen.csproj|c:\\users\\mac\\onedrive - office 365 fontys\\documenten\\leerjaar 1\\individual project\\bussen code\\onlinebussen\\onlinebussen\\pages\\signup\\signup.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "AbsoluteMoniker": "D:0:0:{A3D3C119-7BAE-40F6-82AA-5B5EF0143947}|OnlineBussen\\OnlineBussen.csproj|c:\\users\\mac\\onedrive - office 365 fontys\\documenten\\leerjaar 1\\individual project\\bussen code\\online-bus-game\\onlinebussen\\onlinebussen\\pages\\account\\account.cshtml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A3D3C119-7BAE-40F6-82AA-5B5EF0143947}|OnlineBussen\\OnlineBussen.csproj|solutionrelative:onlinebussen\\pages\\account\\account.cshtml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A3D3C119-7BAE-40F6-82AA-5B5EF0143947}|OnlineBussen\\OnlineBussen.csproj|c:\\users\\mac\\onedrive - office 365 fontys\\documenten\\leerjaar 1\\individual project\\bussen code\\online-bus-game\\onlinebussen\\onlinebussen\\pages\\signup\\signup.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{A3D3C119-7BAE-40F6-82AA-5B5EF0143947}|OnlineBussen\\OnlineBussen.csproj|solutionrelative:onlinebussen\\pages\\signup\\signup.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{A3D3C119-7BAE-40F6-82AA-5B5EF0143947}|OnlineBussen\\OnlineBussen.csproj|c:\\users\\mac\\onedrive - office 365 fontys\\documenten\\leerjaar 1\\individual project\\bussen code\\onlinebussen\\onlinebussen\\pages\\index.cshtml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{A3D3C119-7BAE-40F6-82AA-5B5EF0143947}|OnlineBussen\\OnlineBussen.csproj|c:\\users\\mac\\onedrive - office 365 fontys\\documenten\\leerjaar 1\\individual project\\bussen code\\online-bus-game\\onlinebussen\\onlinebussen\\pages\\index.cshtml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{A3D3C119-7BAE-40F6-82AA-5B5EF0143947}|OnlineBussen\\OnlineBussen.csproj|solutionrelative:onlinebussen\\pages\\index.cshtml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{A3D3C119-7BAE-40F6-82AA-5B5EF0143947}|OnlineBussen\\OnlineBussen.csproj|c:\\users\\mac\\onedrive - office 365 fontys\\documenten\\leerjaar 1\\individual project\\bussen code\\onlinebussen\\onlinebussen\\wwwroot\\css\\loginpage.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
-      "RelativeMoniker": "D:0:0:{A3D3C119-7BAE-40F6-82AA-5B5EF0143947}|OnlineBussen\\OnlineBussen.csproj|solutionrelative:onlinebussen\\wwwroot\\css\\loginpage.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
+      "AbsoluteMoniker": "D:0:0:{A3D3C119-7BAE-40F6-82AA-5B5EF0143947}|OnlineBussen\\OnlineBussen.csproj|c:\\users\\mac\\onedrive - office 365 fontys\\documenten\\leerjaar 1\\individual project\\bussen code\\online-bus-game\\onlinebussen\\onlinebussen\\pages\\settings\\settings.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{A3D3C119-7BAE-40F6-82AA-5B5EF0143947}|OnlineBussen\\OnlineBussen.csproj|solutionrelative:onlinebussen\\pages\\settings\\settings.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{A3D3C119-7BAE-40F6-82AA-5B5EF0143947}|OnlineBussen\\OnlineBussen.csproj|c:\\users\\mac\\onedrive - office 365 fontys\\documenten\\leerjaar 1\\individual project\\bussen code\\onlinebussen\\onlinebussen\\pages\\signup\\signup.cshtml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{A3D3C119-7BAE-40F6-82AA-5B5EF0143947}|OnlineBussen\\OnlineBussen.csproj|c:\\users\\mac\\onedrive - office 365 fontys\\documenten\\leerjaar 1\\individual project\\bussen code\\online-bus-game\\onlinebussen\\onlinebussen\\pages\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{A3D3C119-7BAE-40F6-82AA-5B5EF0143947}|OnlineBussen\\OnlineBussen.csproj|solutionrelative:onlinebussen\\pages\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A3D3C119-7BAE-40F6-82AA-5B5EF0143947}|OnlineBussen\\OnlineBussen.csproj|c:\\users\\mac\\onedrive - office 365 fontys\\documenten\\leerjaar 1\\individual project\\bussen code\\online-bus-game\\onlinebussen\\onlinebussen\\pages\\account\\account.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{A3D3C119-7BAE-40F6-82AA-5B5EF0143947}|OnlineBussen\\OnlineBussen.csproj|solutionrelative:onlinebussen\\pages\\account\\account.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A3D3C119-7BAE-40F6-82AA-5B5EF0143947}|OnlineBussen\\OnlineBussen.csproj|c:\\users\\mac\\onedrive - office 365 fontys\\documenten\\leerjaar 1\\individual project\\bussen code\\online-bus-game\\onlinebussen\\onlinebussen\\pages\\lobby\\lobby.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{A3D3C119-7BAE-40F6-82AA-5B5EF0143947}|OnlineBussen\\OnlineBussen.csproj|solutionrelative:onlinebussen\\pages\\lobby\\lobby.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A3D3C119-7BAE-40F6-82AA-5B5EF0143947}|OnlineBussen\\OnlineBussen.csproj|c:\\users\\mac\\onedrive - office 365 fontys\\documenten\\leerjaar 1\\individual project\\bussen code\\online-bus-game\\onlinebussen\\onlinebussen\\pages\\signup\\signup.cshtml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{A3D3C119-7BAE-40F6-82AA-5B5EF0143947}|OnlineBussen\\OnlineBussen.csproj|solutionrelative:onlinebussen\\pages\\signup\\signup.cshtml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A3D3C119-7BAE-40F6-82AA-5B5EF0143947}|OnlineBussen\\OnlineBussen.csproj|c:\\users\\mac\\onedrive - office 365 fontys\\documenten\\leerjaar 1\\individual project\\bussen code\\onlinebussen\\onlinebussen\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A3D3C119-7BAE-40F6-82AA-5B5EF0143947}|OnlineBussen\\OnlineBussen.csproj|solutionrelative:onlinebussen\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A3D3C119-7BAE-40F6-82AA-5B5EF0143947}|OnlineBussen\\OnlineBussen.csproj|c:\\users\\mac\\onedrive - office 365 fontys\\documenten\\leerjaar 1\\individual project\\bussen code\\onlinebussen\\onlinebussen\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
-      "RelativeMoniker": "D:0:0:{A3D3C119-7BAE-40F6-82AA-5B5EF0143947}|OnlineBussen\\OnlineBussen.csproj|solutionrelative:onlinebussen\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A3D3C119-7BAE-40F6-82AA-5B5EF0143947}|OnlineBussen\\OnlineBussen.csproj|c:\\users\\mac\\onedrive - office 365 fontys\\documenten\\leerjaar 1\\individual project\\bussen code\\onlinebussen\\onlinebussen\\models\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A3D3C119-7BAE-40F6-82AA-5B5EF0143947}|OnlineBussen\\OnlineBussen.csproj|solutionrelative:onlinebussen\\models\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -50,128 +46,122 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 5,
+          "SelectedChildIndex": 3,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "LoginPage.css",
-              "DocumentMoniker": "C:\\Users\\Mac\\OneDrive - Office 365 Fontys\\Documenten\\LEERJAAR 1\\Individual project\\Bussen code\\OnlineBussen\\OnlineBussen\\wwwroot\\css\\LoginPage.css",
-              "RelativeDocumentMoniker": "OnlineBussen\\wwwroot\\css\\LoginPage.css",
-              "ToolTip": "C:\\Users\\Mac\\OneDrive - Office 365 Fontys\\Documenten\\LEERJAAR 1\\Individual project\\Bussen code\\OnlineBussen\\OnlineBussen\\wwwroot\\css\\LoginPage.css",
-              "RelativeToolTip": "OnlineBussen\\wwwroot\\css\\LoginPage.css",
-              "ViewState": "AgIAAA8AAAAAAAAAAAAAACEAAAABAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
-              "WhenOpened": "2025-04-25T09:04:21.259Z"
+              "DocumentIndex": 7,
+              "Title": "Lobby.cshtml",
+              "DocumentMoniker": "C:\\Users\\Mac\\OneDrive - Office 365 Fontys\\Documenten\\LEERJAAR 1\\Individual project\\Bussen code\\Online-Bus-game\\OnlineBussen\\OnlineBussen\\Pages\\Lobby\\Lobby.cshtml",
+              "RelativeDocumentMoniker": "OnlineBussen\\Pages\\Lobby\\Lobby.cshtml",
+              "ToolTip": "C:\\Users\\Mac\\OneDrive - Office 365 Fontys\\Documenten\\LEERJAAR 1\\Individual project\\Bussen code\\Online-Bus-game\\OnlineBussen\\OnlineBussen\\Pages\\Lobby\\Lobby.cshtml",
+              "RelativeToolTip": "OnlineBussen\\Pages\\Lobby\\Lobby.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABoAAAAOAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-05-08T10:29:53.56Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 4,
-              "Title": "Index.cshtml.cs",
-              "DocumentMoniker": "C:\\Users\\Mac\\OneDrive - Office 365 Fontys\\Documenten\\LEERJAAR 1\\Individual project\\Bussen code\\OnlineBussen\\OnlineBussen\\Pages\\Index.cshtml.cs",
-              "RelativeDocumentMoniker": "OnlineBussen\\Pages\\Index.cshtml.cs",
-              "ToolTip": "C:\\Users\\Mac\\OneDrive - Office 365 Fontys\\Documenten\\LEERJAAR 1\\Individual project\\Bussen code\\OnlineBussen\\OnlineBussen\\Pages\\Index.cshtml.cs",
-              "RelativeToolTip": "OnlineBussen\\Pages\\Index.cshtml.cs",
-              "ViewState": "AgIAABkAAAAAAAAAAAAkwC8AAAANAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-25T07:53:25.253Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "Index.cshtml",
-              "DocumentMoniker": "C:\\Users\\Mac\\OneDrive - Office 365 Fontys\\Documenten\\LEERJAAR 1\\Individual project\\Bussen code\\OnlineBussen\\OnlineBussen\\Pages\\Index.cshtml",
-              "RelativeDocumentMoniker": "OnlineBussen\\Pages\\Index.cshtml",
-              "ToolTip": "C:\\Users\\Mac\\OneDrive - Office 365 Fontys\\Documenten\\LEERJAAR 1\\Individual project\\Bussen code\\OnlineBussen\\OnlineBussen\\Pages\\Index.cshtml",
-              "RelativeToolTip": "OnlineBussen\\Pages\\Index.cshtml",
-              "ViewState": "AgIAAAYAAAAAAAAAAAAAABAAAAAhAAAAAAAAAA==",
+              "Title": "Settings.cshtml",
+              "DocumentMoniker": "C:\\Users\\Mac\\OneDrive - Office 365 Fontys\\Documenten\\LEERJAAR 1\\Individual project\\Bussen code\\Online-Bus-game\\OnlineBussen\\OnlineBussen\\Pages\\Settings\\Settings.cshtml",
+              "RelativeDocumentMoniker": "OnlineBussen\\Pages\\Settings\\Settings.cshtml",
+              "ToolTip": "C:\\Users\\Mac\\OneDrive - Office 365 Fontys\\Documenten\\LEERJAAR 1\\Individual project\\Bussen code\\Online-Bus-game\\OnlineBussen\\OnlineBussen\\Pages\\Settings\\Settings.cshtml",
+              "RelativeToolTip": "OnlineBussen\\Pages\\Settings\\Settings.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAACEAAAAOAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-04-10T08:33:13.284Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 7,
-              "Title": "Program.cs",
-              "DocumentMoniker": "C:\\Users\\Mac\\OneDrive - Office 365 Fontys\\Documenten\\LEERJAAR 1\\Individual project\\Bussen code\\OnlineBussen\\OnlineBussen\\Program.cs",
-              "RelativeDocumentMoniker": "OnlineBussen\\Program.cs",
-              "ToolTip": "C:\\Users\\Mac\\OneDrive - Office 365 Fontys\\Documenten\\LEERJAAR 1\\Individual project\\Bussen code\\OnlineBussen\\OnlineBussen\\Program.cs",
-              "RelativeToolTip": "OnlineBussen\\Program.cs",
-              "ViewState": "AgIAAAEAAAAAAAAAAAAIwB8AAAAVAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-25T07:36:13.973Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "Account.cshtml",
-              "DocumentMoniker": "C:\\Users\\Mac\\OneDrive - Office 365 Fontys\\Documenten\\LEERJAAR 1\\Individual project\\Bussen code\\OnlineBussen\\OnlineBussen\\Pages\\Account\\Account.cshtml",
-              "RelativeDocumentMoniker": "OnlineBussen\\Pages\\Account\\Account.cshtml",
-              "ToolTip": "C:\\Users\\Mac\\OneDrive - Office 365 Fontys\\Documenten\\LEERJAAR 1\\Individual project\\Bussen code\\OnlineBussen\\OnlineBussen\\Pages\\Account\\Account.cshtml",
-              "RelativeToolTip": "OnlineBussen\\Pages\\Account\\Account.cshtml",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAAZAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-04-25T09:49:59.68Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "Account.cshtml.cs",
-              "DocumentMoniker": "C:\\Users\\Mac\\OneDrive - Office 365 Fontys\\Documenten\\LEERJAAR 1\\Individual project\\Bussen code\\OnlineBussen\\OnlineBussen\\Pages\\Account\\Account.cshtml.cs",
-              "RelativeDocumentMoniker": "OnlineBussen\\Pages\\Account\\Account.cshtml.cs",
-              "ToolTip": "C:\\Users\\Mac\\OneDrive - Office 365 Fontys\\Documenten\\LEERJAAR 1\\Individual project\\Bussen code\\OnlineBussen\\OnlineBussen\\Pages\\Account\\Account.cshtml.cs",
-              "RelativeToolTip": "OnlineBussen\\Pages\\Account\\Account.cshtml.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABMAAAASAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-25T07:33:55.423Z",
+              "WhenOpened": "2025-05-08T10:29:05.156Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 9,
-              "Title": "User.cs",
-              "DocumentMoniker": "C:\\Users\\Mac\\OneDrive - Office 365 Fontys\\Documenten\\LEERJAAR 1\\Individual project\\Bussen code\\OnlineBussen\\OnlineBussen\\Models\\User.cs",
-              "RelativeDocumentMoniker": "OnlineBussen\\Models\\User.cs",
-              "ToolTip": "C:\\Users\\Mac\\OneDrive - Office 365 Fontys\\Documenten\\LEERJAAR 1\\Individual project\\Bussen code\\OnlineBussen\\OnlineBussen\\Models\\User.cs",
-              "RelativeToolTip": "OnlineBussen\\Models\\User.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-25T07:28:21.637Z"
+              "DocumentIndex": 5,
+              "Title": "_Layout.cshtml",
+              "DocumentMoniker": "C:\\Users\\Mac\\OneDrive - Office 365 Fontys\\Documenten\\LEERJAAR 1\\Individual project\\Bussen code\\Online-Bus-game\\OnlineBussen\\OnlineBussen\\Pages\\Shared\\_Layout.cshtml",
+              "RelativeDocumentMoniker": "OnlineBussen\\Pages\\Shared\\_Layout.cshtml",
+              "ToolTip": "C:\\Users\\Mac\\OneDrive - Office 365 Fontys\\Documenten\\LEERJAAR 1\\Individual project\\Bussen code\\Online-Bus-game\\OnlineBussen\\OnlineBussen\\Pages\\Shared\\_Layout.cshtml",
+              "RelativeToolTip": "OnlineBussen\\Pages\\Shared\\_Layout.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-05-08T10:02:56.618Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
-              "Title": "appsettings.json",
-              "DocumentMoniker": "C:\\Users\\Mac\\OneDrive - Office 365 Fontys\\Documenten\\LEERJAAR 1\\Individual project\\Bussen code\\OnlineBussen\\OnlineBussen\\appsettings.json",
-              "RelativeDocumentMoniker": "OnlineBussen\\appsettings.json",
-              "ToolTip": "C:\\Users\\Mac\\OneDrive - Office 365 Fontys\\Documenten\\LEERJAAR 1\\Individual project\\Bussen code\\OnlineBussen\\OnlineBussen\\appsettings.json",
-              "RelativeToolTip": "OnlineBussen\\appsettings.json",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAABAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
-              "WhenOpened": "2025-04-11T09:42:46.318Z"
+              "DocumentIndex": 0,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "C:\\Users\\Mac\\OneDrive - Office 365 Fontys\\Documenten\\LEERJAAR 1\\Individual project\\Bussen code\\Online-Bus-game\\OnlineBussen\\OnlineBussen\\Pages\\Index.cshtml",
+              "RelativeDocumentMoniker": "OnlineBussen\\Pages\\Index.cshtml",
+              "ToolTip": "C:\\Users\\Mac\\OneDrive - Office 365 Fontys\\Documenten\\LEERJAAR 1\\Individual project\\Bussen code\\Online-Bus-game\\OnlineBussen\\OnlineBussen\\Pages\\Index.cshtml",
+              "RelativeToolTip": "OnlineBussen\\Pages\\Index.cshtml",
+              "ViewState": "AgIAAAwAAAAAAAAAAAAAABkAAAAlAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-04-10T08:33:13.284Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 3,
+              "Title": "Index.cshtml.cs",
+              "DocumentMoniker": "C:\\Users\\Mac\\OneDrive - Office 365 Fontys\\Documenten\\LEERJAAR 1\\Individual project\\Bussen code\\Online-Bus-game\\OnlineBussen\\OnlineBussen\\Pages\\Index.cshtml.cs",
+              "RelativeDocumentMoniker": "OnlineBussen\\Pages\\Index.cshtml.cs",
+              "ToolTip": "C:\\Users\\Mac\\OneDrive - Office 365 Fontys\\Documenten\\LEERJAAR 1\\Individual project\\Bussen code\\Online-Bus-game\\OnlineBussen\\OnlineBussen\\Pages\\Index.cshtml.cs",
+              "RelativeToolTip": "OnlineBussen\\Pages\\Index.cshtml.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABUAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-25T07:53:25.253Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
               "Title": "Signup.cshtml",
-              "DocumentMoniker": "C:\\Users\\Mac\\OneDrive - Office 365 Fontys\\Documenten\\LEERJAAR 1\\Individual project\\Bussen code\\OnlineBussen\\OnlineBussen\\Pages\\Signup\\Signup.cshtml",
+              "DocumentMoniker": "C:\\Users\\Mac\\OneDrive - Office 365 Fontys\\Documenten\\LEERJAAR 1\\Individual project\\Bussen code\\Online-Bus-game\\OnlineBussen\\OnlineBussen\\Pages\\Signup\\Signup.cshtml",
               "RelativeDocumentMoniker": "OnlineBussen\\Pages\\Signup\\Signup.cshtml",
-              "ToolTip": "C:\\Users\\Mac\\OneDrive - Office 365 Fontys\\Documenten\\LEERJAAR 1\\Individual project\\Bussen code\\OnlineBussen\\OnlineBussen\\Pages\\Signup\\Signup.cshtml",
+              "ToolTip": "C:\\Users\\Mac\\OneDrive - Office 365 Fontys\\Documenten\\LEERJAAR 1\\Individual project\\Bussen code\\Online-Bus-game\\OnlineBussen\\OnlineBussen\\Pages\\Signup\\Signup.cshtml",
               "RelativeToolTip": "OnlineBussen\\Pages\\Signup\\Signup.cshtml",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABcAAAAfAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-04-10T08:34:39.712Z"
+              "WhenOpened": "2025-04-10T08:34:39.712Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "Signup.cshtml.cs",
+              "DocumentMoniker": "C:\\Users\\Mac\\OneDrive - Office 365 Fontys\\Documenten\\LEERJAAR 1\\Individual project\\Bussen code\\Online-Bus-game\\OnlineBussen\\OnlineBussen\\Pages\\Signup\\Signup.cshtml.cs",
+              "RelativeDocumentMoniker": "OnlineBussen\\Pages\\Signup\\Signup.cshtml.cs",
+              "ToolTip": "C:\\Users\\Mac\\OneDrive - Office 365 Fontys\\Documenten\\LEERJAAR 1\\Individual project\\Bussen code\\Online-Bus-game\\OnlineBussen\\OnlineBussen\\Pages\\Signup\\Signup.cshtml.cs",
+              "RelativeToolTip": "OnlineBussen\\Pages\\Signup\\Signup.cshtml.cs",
+              "ViewState": "AgIAAAQAAAAAAAAAAAAswA8AAAAPAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-11T09:16:42.143Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 6,
-              "Title": "Signup.cshtml.cs",
-              "DocumentMoniker": "C:\\Users\\Mac\\OneDrive - Office 365 Fontys\\Documenten\\LEERJAAR 1\\Individual project\\Bussen code\\OnlineBussen\\OnlineBussen\\Pages\\Signup\\Signup.cshtml.cs",
-              "RelativeDocumentMoniker": "OnlineBussen\\Pages\\Signup\\Signup.cshtml.cs",
-              "ToolTip": "C:\\Users\\Mac\\OneDrive - Office 365 Fontys\\Documenten\\LEERJAAR 1\\Individual project\\Bussen code\\OnlineBussen\\OnlineBussen\\Pages\\Signup\\Signup.cshtml.cs",
-              "RelativeToolTip": "OnlineBussen\\Pages\\Signup\\Signup.cshtml.cs",
-              "ViewState": "AgIAABUAAAAAAAAAAAA3wCkAAAANAAAAAAAAAA==",
+              "Title": "Account.cshtml",
+              "DocumentMoniker": "C:\\Users\\Mac\\OneDrive - Office 365 Fontys\\Documenten\\LEERJAAR 1\\Individual project\\Bussen code\\Online-Bus-game\\OnlineBussen\\OnlineBussen\\Pages\\Account\\Account.cshtml",
+              "RelativeDocumentMoniker": "OnlineBussen\\Pages\\Account\\Account.cshtml",
+              "ToolTip": "C:\\Users\\Mac\\OneDrive - Office 365 Fontys\\Documenten\\LEERJAAR 1\\Individual project\\Bussen code\\Online-Bus-game\\OnlineBussen\\OnlineBussen\\Pages\\Account\\Account.cshtml",
+              "RelativeToolTip": "OnlineBussen\\Pages\\Account\\Account.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-04-25T09:49:59.68Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Account.cshtml.cs",
+              "DocumentMoniker": "C:\\Users\\Mac\\OneDrive - Office 365 Fontys\\Documenten\\LEERJAAR 1\\Individual project\\Bussen code\\Online-Bus-game\\OnlineBussen\\OnlineBussen\\Pages\\Account\\Account.cshtml.cs",
+              "RelativeDocumentMoniker": "OnlineBussen\\Pages\\Account\\Account.cshtml.cs",
+              "ToolTip": "C:\\Users\\Mac\\OneDrive - Office 365 Fontys\\Documenten\\LEERJAAR 1\\Individual project\\Bussen code\\Online-Bus-game\\OnlineBussen\\OnlineBussen\\Pages\\Account\\Account.cshtml.cs",
+              "RelativeToolTip": "OnlineBussen\\Pages\\Account\\Account.cshtml.cs",
+              "ViewState": "AgIAAAEAAAAAAAAAAAAgwAoAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-11T09:16:42.143Z"
+              "WhenOpened": "2025-04-25T07:33:55.423Z",
+              "EditorCaption": ""
             }
           ]
         }
