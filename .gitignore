@@ -68,3 +68,24 @@ appsettings.Production.json
 .Trashes
 ehthumbs.db
 Thumbs.db
+
+# VS Code specific files
+.vs/
+.suo
+**/v17/**
+*.backup.json
+DocumentLayout.json
+DocumentLayout.backup.json
+
+# Project evaluation files
+*.metadata.v*.bin
+*.projects.v*.bin
+
+# Copilot files
+**/CopilotIndices/**
+CodeChunks.db-*
+SemanticSymbols.db-*
+*.dtbcache.v2
+
+# Design time files
+**/DesignTimeBuild/**
