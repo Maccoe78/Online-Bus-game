@@ -7,6 +7,7 @@ namespace OnlineBussen.Pages.Settings
     {
         public void OnGet()
         {
+            ViewData["Username"] = HttpContext.Session.GetString("Username");
         }
     }
 }
