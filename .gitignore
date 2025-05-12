@@ -2,31 +2,69 @@
 # This .gitignore file was automatically created by Microsoft(R) Visual Studio.
 ################################################################################
 
-## Visual Studio files
+# Visual Studio files
 .vs/
-*.vsidx
-[Bb]in/
-[Oo]bj/
-[Dd]ebug/
-[Rr]elease/
-
-## User-specific files
-*.suo
 *.user
 *.userosscache
 *.sln.docstates
+*.userprefs
 
-## Build results
+# Build results
 [Dd]ebug/
 [Dd]ebugPublic/
 [Rr]elease/
 [Rr]eleases/
 x64/
 x86/
-[Aa][Rr][Mm]/
-[Aa][Rr][Mm]64/
+build/
 bld/
 [Bb]in/
 [Oo]bj/
-[Ll]og/
-[Ll]ogs/
+[Oo]ut/
+msbuild.log
+msbuild.err
+msbuild.wrn
+
+# Visual Studio Code
+.vscode/
+
+# User-specific files
+*.suo
+*.user
+*.userosscache
+*.sln.docstates
+
+# NuGet Packages
+*.nupkg
+# The packages folder can be ignored because of Package Restore
+**/packages/*
+# except build/, which is used as an MSBuild target.
+!**/packages/build/
+# NuGet v3's project.json files produces more ignorable files
+*.nuget.props
+*.nuget.targets
+
+# SQL Server files
+*.mdf
+*.ldf
+
+# Environment files
+appsettings.Development.json
+appsettings.Production.json
+
+# Logs
+*.log
+
+# IDE
+.idea/
+*.swp
+*.swo
+
+# OS generated files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
