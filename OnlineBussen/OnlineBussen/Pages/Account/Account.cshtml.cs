@@ -21,6 +21,7 @@ namespace OnlineBussen.Pages.Account
         }
         public async Task<IActionResult> OnGetAsync()
         {
+            ViewData["Username"] = HttpContext.Session.GetString("Username");
             string username = HttpContext.Session.GetString("Username");
 
             if (string.IsNullOrEmpty(username))

@@ -40,6 +40,7 @@ namespace OnlineBussen.Pages
                     {
                         if (await reader.ReadAsync())
                         {
+                            ViewData["Username"] = Username;
                             HttpContext.Session.SetString("Username", Username);
                             return RedirectToPage("/Account/Account");
                         }
