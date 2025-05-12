@@ -26,6 +26,12 @@
     background: #ddd;
     font-size: 1em;
 }
+.button-container {
+    width: 300px;
+    display: flex;
+    justify-content: space-between;
+    margin-top: 10px;
+}
 
 .btn {
     padding: 10px 20px;
