@@ -1,7 +1,13 @@
+using OnlineBussen.Controllers;
+using OnlineBussen.Interfaces;
+using OnlineBussen.Repositorys;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddRazorPages();
+builder.Services.AddScoped<IUserRepository, UserRepository>();
+builder.Services.AddScoped<UserController>();
 builder.Services.AddSingleton<IConfiguration>(builder.Configuration);
 builder.Services.AddSession(options =>
 {
