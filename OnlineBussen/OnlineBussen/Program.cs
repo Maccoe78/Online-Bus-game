@@ -8,6 +8,8 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddRazorPages();
 builder.Services.AddScoped<IUserRepository, UserRepository>();
 builder.Services.AddScoped<UserController>();
+builder.Services.AddScoped<ILobbyRepository, LobbyRepository>();
+builder.Services.AddScoped<LobbyController>();
 builder.Services.AddSingleton<IConfiguration>(builder.Configuration);
 builder.Services.AddSession(options =>
 {

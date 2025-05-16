@@ -1,0 +1,51 @@
+﻿@page
+@model OnlineBussen.Pages.Lobby.LobbyDetailModel
+@{
+    Layout = "_Layout";
+}
+
+<div class="flex-1 p-8 min-h-screen bg-[#5A1E1E] flex flex-col ml-64 font-irish">
+    <div class="bg-[#4A1818] rounded-lg p-6 max-w-3xl mx-auto w-full">
+        <div class="flex justify-between items-center mb-8">
+            <h1 class="text-3xl text-bus-gold">Lobby @Model.Lobby.LobbyName</h1>
+            <span class="text-bus-gold">LobbyCode: XXXXX</span>
+        </div>
+
+        <div class="space-y-4">
+            <!-- Host -->
+            <div class="border-b border-bus-gold/30">
+                <div class="flex justify-between py-2">
+                    <span class="text-bus-gold">@Model.Lobby.Host</span>
+                    <span class="text-[#C5B351]">Host</span>
+                </div>
+            </div>
+
+            <!-- Other Players -->
+            @foreach (var player in Model.Players)
+            {
+                <div class="border-b border-bus-gold/30">
+                    <div class="flex justify-between py-2">
+                        <span class="text-bus-gold">@player.Username</span>
+                        <span class="text-[#C5B351]">Joined</span>
+                    </div>
+                </div>
+            }
+        </div>
+
+        @if (Model.IsHost)
+        {
+            <div class="flex justify-end mt-8 space-x-4">
+                <form method="post" asp-page-handler="DeleteLobby">
+                    <input type="hidden" name="lobbyId" value="@Model.Lobby.LobbyId" />
+                    <button type="submit" class="px-6 py-2 bg-red-600 text-white rounded-full hover:bg-opacity-90 transition-all">
+                        Delete Lobby
+                    </button>
+                </form>
+                <button class="px-6 py-2 bg-[#C5B351] text-bus-dark rounded-full hover:bg-opacity-90 transition-all">
+                    Start Game
+                </button>
+                
+            </div>
+        }
+    </div>
+</div>
