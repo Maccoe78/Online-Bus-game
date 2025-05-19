@@ -6,6 +6,7 @@ using OnlineBussen.Models;
 
 namespace OnlineBussen.Pages.Lobby
 {
+    
     public class LobbyDetailModel : PageModel
     {
         private readonly LobbyController _lobbyController;

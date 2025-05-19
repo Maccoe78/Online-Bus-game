@@ -38,5 +38,10 @@ namespace OnlineBussen.Pages
             ModelState.AddModelError(string.Empty, "Invalid login attempt");
             return Page();
         }
+        public IActionResult OnGetLogout()
+        {
+            HttpContext.Session.Clear(); // Wist alle sessie data
+            return RedirectToPage("/Index");
+        }
     }
 }
