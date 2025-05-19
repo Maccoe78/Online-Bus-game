@@ -9,6 +9,7 @@ using Microsoft.AspNetCore.Mvc.ModelBinding.Binders;
 
 namespace OnlineBussen.Pages.Account
 {
+    [Authentication]
     public class AccountModel : PageModel
     {
         private readonly IConfiguration _configuration;
