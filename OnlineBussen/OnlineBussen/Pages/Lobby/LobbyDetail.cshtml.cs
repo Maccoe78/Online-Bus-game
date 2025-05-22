@@ -3,6 +3,7 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 using OnlineBussen.Controllers;
 using OnlineBussen.Interfaces;
 using OnlineBussen.Models;
+using OnlineBussen.Repositorys;
 
 namespace OnlineBussen.Pages.Lobby
 {
@@ -19,14 +20,13 @@ namespace OnlineBussen.Pages.Lobby
         public Models.Lobby Lobby { get; set; }
         public List<User> Players { get; set; } = new List<User>();
         public bool IsHost { get; set; }
+        public bool HasJoined { get; set; }
 
         public async Task<IActionResult> OnGetAsync(int lobbyId)
         {
-            // Haal de huidige gebruikersnaam op uit de sessie
             string currentUsername = HttpContext.Session.GetString("Username");
             ViewData["Username"] = currentUsername;
 
-            // Haal lobby informatie op
             Lobby = await _lobbyController.GetLobbyByIdAsync(lobbyId);
 
             if (Lobby == null)
@@ -34,22 +34,35 @@ namespace OnlineBussen.Pages.Lobby
                 return NotFound();
             }
 
-            // Bepaal of de huidige gebruiker de host is
             IsHost = currentUsername == Lobby.Host;
+
+            HasJoined = Lobby.GetJoinedPlayers().Contains(currentUsername);
 
             return Page();
         }
         public async Task<IActionResult> OnPostDeleteLobbyAsync(int lobbyId)
         {
 
-            // Controleer of de huidige gebruiker de host is
-            //if (!IsHost)
-            //{
-            //    return Forbid();
-            //}
-
             await _lobbyController.DeleteLobbyAsync(lobbyId);
             return RedirectToPage("/Lobby/Lobby");
+        }
+        public async Task<IActionResult> OnPostJoinLobbyAsync(int lobbyId, string password)
+        {
+            var lobby = await _lobbyController.GetLobbyByIdAsync(lobbyId);
+
+            if (lobby == null || lobby.LobbyPassword != password)
+            {
+                TempData["Error"] = "Invalid lobby or password";
+                return RedirectToPage("/Lobby/LobbyDetail");
+            }
+
+            string currentUsername = HttpContext.Session.GetString("Username");
+            await _lobbyController.AddPlayerToLobbyAsync(lobbyId, currentUsername);
+
+            // Refresh the lobby data after joining
+            Lobby = await _lobbyController.GetLobbyByIdAsync(lobbyId);
+
+            return RedirectToPage("/Lobby/LobbyDetail", new { lobbyId });
         }
 
     }
