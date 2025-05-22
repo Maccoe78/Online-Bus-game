@@ -42,5 +42,13 @@ namespace OnlineBussen.Controllers
         {
             await _lobbyRepository.UpdatePlayerCountAsync(lobbyId, playerCount);
         }
+        public async Task AddPlayerToLobbyAsync(int lobbyId, string username)
+        {
+            await _lobbyRepository.AddPlayerToLobbyAsync(lobbyId, username);
+        }
+        public async Task<bool> IsPlayerInLobbyAsync(int lobbyId, string username)
+        {
+            return await _lobbyRepository.IsPlayerInLobbyAsync(lobbyId, username);
+        }
     }
 }
