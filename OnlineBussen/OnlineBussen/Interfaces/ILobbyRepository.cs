@@ -13,5 +13,8 @@ namespace OnlineBussen.Interfaces
         Task<Lobby> GetLobbyByIdAsync(int lobbyId);
         Task AddPlayerToLobbyAsync(int lobbyId, string username);
         Task<bool> IsPlayerInLobbyAsync(int lobbyId, string username);
+        Task UpdatePlayerUsernameInLobbiesAsync(string oldUsername, string newUsername);
+        Task RemovePlayerFromLobbyAsync(int lobbyId, string username);
+        Task<bool> LobbyNameExistsAsync(string lobbyName);
     }
 }

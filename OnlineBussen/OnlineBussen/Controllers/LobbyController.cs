@@ -12,9 +12,15 @@ namespace OnlineBussen.Controllers
             _lobbyRepository = lobbyRepository;
         }
 
-        public async Task<int> CreateLobbyAsync(Lobby lobby, string username)
+        public async Task<(bool success, string message)> CreateLobbyAsync(string lobbyName, string lobbyPassword, string username)
         {
-            return await _lobbyRepository.CreateLobbyAsync(lobby.LobbyName, lobby.LobbyPassword, username);
+            if (await _lobbyRepository.LobbyNameExistsAsync(lobbyName))
+            {
+                return (false, "A lobby with this name already exists");
+            }
+
+            await _lobbyRepository.CreateLobbyAsync(lobbyName, lobbyPassword, username);
+            return (true, "Lobby created successfully");
         }
         public async Task DeleteLobbyAsync(int lobbyId)
         {
@@ -50,5 +56,14 @@ namespace OnlineBussen.Controllers
         {
             return await _lobbyRepository.IsPlayerInLobbyAsync(lobbyId, username);
         }
+        public async Task UpdatePlayerUsernameInLobbiesAsync(string oldUsername, string newUsername)
+        {
+            await _lobbyRepository.UpdatePlayerUsernameInLobbiesAsync(oldUsername, newUsername);
+        }
+        public async Task RemovePlayerFromLobbyAsync(int lobbyId, string username)
+        {
+            await _lobbyRepository.RemovePlayerFromLobbyAsync(lobbyId, username);
+        }
+
     }
 }

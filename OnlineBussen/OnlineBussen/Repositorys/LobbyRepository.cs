@@ -199,5 +199,109 @@ namespace OnlineBussen.Repositorys
             var lobby = await GetLobbyByIdAsync(lobbyId);
             return lobby.GetJoinedPlayers().Contains(currentUsername);
         }
+        public async Task UpdatePlayerUsernameInLobbiesAsync(string oldUsername, string newUsername)
+        {
+            using (SqlConnection connection = new SqlConnection(_connectionString))
+            {
+                await connection.OpenAsync();
+
+                // Eerst alle lobbies ophalen waar de speler in zit
+                string selectSql = "SELECT LobbyId, Host, JoinedPlayers FROM Lobbys WHERE JoinedPlayers LIKE @Pattern";
+
+                using (SqlCommand selectCommand = new SqlCommand(selectSql, connection))
+                {
+                    selectCommand.Parameters.AddWithValue("@Pattern", $"%{oldUsername}%");
+
+                    using (SqlDataReader reader = await selectCommand.ExecuteReaderAsync())
+                    {
+                        var lobbiesToUpdate = new List<(int LobbyId, string Host, string JoinedPlayers)>();
+
+                        while (await reader.ReadAsync())
+                        {
+                            lobbiesToUpdate.Add((
+                                reader.GetInt32(0),
+                                reader.GetString(1),
+                                reader.GetString(2)
+                            ));
+                        }
+
+                        reader.Close();
+
+                        foreach (var lobby in lobbiesToUpdate)
+                        {
+                            // Update Host als dat nodig is
+                            if (lobby.Host == oldUsername)
+                            {
+                                string updateHostSql = "UPDATE Lobbys SET Host = @NewUsername WHERE LobbyId = @LobbyId";
+                                using (SqlCommand updateHostCommand = new SqlCommand(updateHostSql, connection))
+                                {
+                                    updateHostCommand.Parameters.AddWithValue("@NewUsername", newUsername);
+                                    updateHostCommand.Parameters.AddWithValue("@LobbyId", lobby.LobbyId);
+                                    await updateHostCommand.ExecuteNonQueryAsync();
+                                }
+                            }
+
+                            // Update JoinedPlayers
+                            var players = System.Text.Json.JsonSerializer.Deserialize<List<string>>(lobby.JoinedPlayers);
+                            int index = players.IndexOf(oldUsername);
+                            if (index != -1)
+                            {
+                                players[index] = newUsername;
+                                string updatedPlayersJson = System.Text.Json.JsonSerializer.Serialize(players);
+
+                                string updatePlayersSql = "UPDATE Lobbys SET JoinedPlayers = @JoinedPlayers WHERE LobbyId = @LobbyId";
+                                using (SqlCommand updatePlayersCommand = new SqlCommand(updatePlayersSql, connection))
+                                {
+                                    updatePlayersCommand.Parameters.AddWithValue("@JoinedPlayers", updatedPlayersJson);
+                                    updatePlayersCommand.Parameters.AddWithValue("@LobbyId", lobby.LobbyId);
+                                    await updatePlayersCommand.ExecuteNonQueryAsync();
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        public async Task RemovePlayerFromLobbyAsync(int lobbyId, string username)
+        {
+            using (SqlConnection connection = new SqlConnection(_connectionString))
+            {
+                await connection.OpenAsync();
+
+                var lobby = await GetLobbyByIdAsync(lobbyId);
+                var players = lobby.GetJoinedPlayers();
+                players.Remove(username);
+
+                string updatedPlayersJson = System.Text.Json.JsonSerializer.Serialize(players);
+
+                string sql = @"UPDATE Lobbys 
+                      SET JoinedPlayers = @JoinedPlayers,
+                          AmountOfPlayers = (SELECT COUNT(*) FROM OPENJSON(@JoinedPlayers))
+                      WHERE LobbyId = @LobbyId";
+
+                using (SqlCommand command = new SqlCommand(sql, connection))
+                {
+                    command.Parameters.AddWithValue("@LobbyId", lobbyId);
+                    command.Parameters.AddWithValue("@JoinedPlayers", updatedPlayersJson);
+                    await command.ExecuteNonQueryAsync();
+                }
+            }
+        }
+        public async Task<bool> LobbyNameExistsAsync(string lobbyName)
+        {
+            using (SqlConnection connection = new SqlConnection(_connectionString))
+            {
+                await connection.OpenAsync();
+                string sql = "SELECT COUNT(*) FROM Lobbys WHERE LobbyName = @LobbyName";
+
+                using (SqlCommand command = new SqlCommand(sql, connection))
+                {
+                    command.Parameters.AddWithValue("@LobbyName", lobbyName);
+                    int count = (int)await command.ExecuteScalarAsync();
+                    return count > 0;
+                }
+            }
+        }
+
     }
 }

@@ -9,11 +9,13 @@ namespace OnlineBussen.Pages.Account
     public class ChangeNameModel : PageModel
     {
         private readonly UserController _userController;
+        private readonly LobbyController _lobbyController;
         public User CurrentUser { get; set; }
 
-        public ChangeNameModel(UserController userController)
+        public ChangeNameModel(UserController userController, LobbyController lobbyController)
         {
             _userController = userController;
+            _lobbyController = lobbyController;
         }
 
         public async Task<IActionResult> OnGetAsync()
@@ -32,11 +34,14 @@ namespace OnlineBussen.Pages.Account
 
             if (user != null)
             {
+                await _lobbyController.UpdatePlayerUsernameInLobbiesAsync(currentUsername, username);
+
+                // Then update the user
                 user.Username = username;
                 user.Password = password;
                 await _userController.UpdateUserAsync(user);
 
-                // Update de session met de nieuwe username
+                // Update session
                 HttpContext.Session.SetString("Username", username);
 
                 return RedirectToPage("/Account/Account");

@@ -64,6 +64,12 @@ namespace OnlineBussen.Pages.Lobby
 
             return RedirectToPage("/Lobby/LobbyDetail", new { lobbyId });
         }
+        public async Task<IActionResult> OnPostLeaveLobbyAsync(int lobbyId)
+        {
+            string currentUsername = HttpContext.Session.GetString("Username");
+            await _lobbyController.RemovePlayerFromLobbyAsync(lobbyId, currentUsername);
+            return RedirectToPage("/Lobby/Lobby");
+        }
 
     }
 }
