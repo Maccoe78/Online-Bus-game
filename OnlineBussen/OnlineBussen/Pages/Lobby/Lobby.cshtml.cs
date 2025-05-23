@@ -17,10 +17,22 @@ namespace OnlineBussen.Pages.Lobby
 
         public IEnumerable<Models.Lobby> Lobbies { get; set; }
 
-        public async Task OnGetAsync()
+        public async Task<IActionResult> OnGetAsync()
         {
-            ViewData["Username"] = HttpContext.Session.GetString("Username");
+            string username = HttpContext.Session.GetString("Username");
+            ViewData["Username"] = username;
+
+            // Check if user is in a lobby
+            var activeLobbyId = await _lobbyController.GetUserActiveLobbyIdAsync(username);
+            if (activeLobbyId.HasValue)
+            {
+                // Redirect to LobbyDetail if user is in a lobby
+                return RedirectToPage("/Lobby/LobbyDetail", new { lobbyId = activeLobbyId.Value });
+            }
+
+            // Otherwise show lobby list
             Lobbies = await _lobbyController.GetAllLobbiesAsync();
+            return Page();
         }
     }
 }

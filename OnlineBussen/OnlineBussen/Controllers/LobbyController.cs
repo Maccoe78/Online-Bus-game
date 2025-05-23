@@ -64,6 +64,10 @@ namespace OnlineBussen.Controllers
         {
             await _lobbyRepository.RemovePlayerFromLobbyAsync(lobbyId, username);
         }
+        public async Task<int?> GetUserActiveLobbyIdAsync(string username)
+        {
+            return await _lobbyRepository.GetUserActiveLobbyIdAsync(username);
+        }
 
     }
 }

@@ -8,7 +8,7 @@
     <div class="bg-[#4A1818] rounded-lg p-6 max-w-3xl mx-auto w-full">
         <div class="flex justify-between items-center mb-8">
             <h1 class="text-3xl text-bus-gold">Lobby @Model.Lobby.LobbyName</h1>
-            <span class="text-bus-gold">Lobby Password: @Model.Lobby.LobbyPassword</span>
+            <span class="text-bus-gold">Lobby Password: @(Model.HasJoined || Model.IsHost ? Model.Lobby.LobbyPassword : "*****")</span>
         </div>
 
         <div class="space-y-4">
