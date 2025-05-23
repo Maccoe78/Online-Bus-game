@@ -302,6 +302,21 @@ namespace OnlineBussen.Repositorys
                 }
             }
         }
+        public async Task<int?> GetUserActiveLobbyIdAsync(string username)
+        {
+            using (SqlConnection connection = new SqlConnection(_connectionString))
+            {
+                await connection.OpenAsync();
+                string sql = "SELECT LobbyId FROM Lobbys WHERE JoinedPlayers LIKE @Pattern";
+
+                using (SqlCommand command = new SqlCommand(sql, connection))
+                {
+                    command.Parameters.AddWithValue("@Pattern", $"%{username}%");
+                    var result = await command.ExecuteScalarAsync();
+                    return result != null ? (int?)result : null;
+                }
+            }
+        }
 
     }
 }
