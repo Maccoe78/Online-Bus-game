@@ -69,5 +69,16 @@
                 </form>
             </div>
         }
+        else if (Model.HasJoined)
+        {
+            <div class="flex justify-end mt-8 space-x-4">
+                <form method="post" asp-page-handler="LeaveLobby">
+                    <input type="hidden" name="lobbyId" value="@Model.Lobby.LobbyId" />
+                    <button type="submit" class="px-6 py-2 bg-red-600 text-white rounded-full hover:bg-opacity-90 transition-all">
+                        Leave Lobby
+                    </button>
+                </form>
+            </div>
+        }
     </div>
 </div>

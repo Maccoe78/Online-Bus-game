@@ -26,11 +26,16 @@ namespace OnlineBussen.Pages.Lobby
 
         public async Task<IActionResult> OnPostAsync()
         {
-
             string username = HttpContext.Session.GetString("Username");
-            int lobbyId = await _lobbyController.CreateLobbyAsync(Lobby, username);
+            var result = await _lobbyController.CreateLobbyAsync(Lobby.LobbyName, Lobby.LobbyPassword, username);
 
-            return RedirectToPage("/Lobby/LobbyDetail", new { lobbyId = lobbyId });
+            if (!result.success)
+            {
+                ModelState.AddModelError("Lobby.LobbyName", result.message);
+                return Page();
+            }
+
+            return RedirectToPage("/Lobby/Lobby");
         }
     }
 }

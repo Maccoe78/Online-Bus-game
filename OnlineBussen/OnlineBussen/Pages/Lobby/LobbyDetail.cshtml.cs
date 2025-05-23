@@ -7,7 +7,7 @@ using OnlineBussen.Repositorys;
 
 namespace OnlineBussen.Pages.Lobby
 {
-    
+    [Authentication]
     public class LobbyDetailModel : PageModel
     {
         private readonly LobbyController _lobbyController;
@@ -63,6 +63,12 @@ namespace OnlineBussen.Pages.Lobby
             Lobby = await _lobbyController.GetLobbyByIdAsync(lobbyId);
 
             return RedirectToPage("/Lobby/LobbyDetail", new { lobbyId });
+        }
+        public async Task<IActionResult> OnPostLeaveLobbyAsync(int lobbyId)
+        {
+            string currentUsername = HttpContext.Session.GetString("Username");
+            await _lobbyController.RemovePlayerFromLobbyAsync(lobbyId, currentUsername);
+            return RedirectToPage("/Lobby/Lobby");
         }
 
     }
