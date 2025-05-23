@@ -7,7 +7,7 @@ using OnlineBussen.Repositorys;
 
 namespace OnlineBussen.Pages.Lobby
 {
-    
+    [Authentication]
     public class LobbyDetailModel : PageModel
     {
         private readonly LobbyController _lobbyController;
