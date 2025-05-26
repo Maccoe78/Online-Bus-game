@@ -8,5 +8,6 @@ namespace OnlineBussen.Interfaces
         Task<User> GetUserByCredentialsAsync(string username, string password);
         Task CreateUserAsync(User user);
         Task UpdateUserAsync(User user);
+        Task<bool> UsernameExistsAsync(string Username);
     }
 }

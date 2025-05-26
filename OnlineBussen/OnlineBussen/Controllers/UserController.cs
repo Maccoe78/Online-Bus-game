@@ -1,5 +1,6 @@
 ﻿using OnlineBussen.Models;
 using OnlineBussen.Interfaces;
+using OnlineBussen.Repositorys;
 
 namespace OnlineBussen.Controllers
 {
@@ -16,8 +17,13 @@ namespace OnlineBussen.Controllers
             return await _userRepository.GetUserByCredentialsAsync(username, password);
         }
 
-        public async Task CreateUserAsync(string username, string password)
+        public async Task<(bool success, string message)> CreateUserAsync(string username, string password)
         {
+            if (await _userRepository.UsernameExistsAsync(username))
+            {
+                return (false, "A User with this name already exists");
+            }
+
             var user = new User
             {
                 Username = username,
@@ -26,6 +32,7 @@ namespace OnlineBussen.Controllers
             };
 
             await _userRepository.CreateUserAsync(user);
+            return (true, "User succesfully created");
         }
 
         public async Task<User> GetUserByUsernameAsync(string username)

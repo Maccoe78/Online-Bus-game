@@ -95,6 +95,21 @@ namespace OnlineBussen.Repositorys
                 }
             }
         }
+        public async Task<bool> UsernameExistsAsync(string Username)
+        {
+            using (SqlConnection connection = new SqlConnection(_connectionString))
+            {
+                await connection.OpenAsync();
+                string sql = "SELECT COUNT(*) FROM Users WHERE Username = @Username";
+
+                using (SqlCommand command = new SqlCommand(sql, connection))
+                {
+                    command.Parameters.AddWithValue("@Username", Username);
+                    int count = (int)await command.ExecuteScalarAsync();
+                    return count > 0;
+                }
+            }
+        }
     }
 }
     

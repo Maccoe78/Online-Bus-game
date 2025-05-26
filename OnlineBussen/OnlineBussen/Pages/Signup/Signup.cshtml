@@ -36,9 +36,10 @@
             <div class="space-y-2">
                 <label class="block text-lg font-medium text-[#FFD700] font-irish">Username</label>
                 <input type="text"
-                       name="Username"
+                       name="User.Username"
                        class="w-full px-4 py-2 bg-gray-100/90 rounded-md focus:outline-none focus:ring-2 focus:ring-[#FFD700]"
                        required>
+                <span asp-validation-for="User.Username" class="absolute -bottom-5 left-0 text-red-500 text-sm"></span>
             </div>
 
             <div class="space-y-2">

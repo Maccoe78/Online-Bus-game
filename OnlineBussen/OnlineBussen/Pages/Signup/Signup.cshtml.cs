@@ -5,44 +5,41 @@ using OnlineBussen.Models;
 using System.Numerics;
 using Microsoft.Data.SqlClient;
 using Microsoft.Extensions.Configuration;
+using OnlineBussen.Controllers;
 
 
 namespace OnlineBussen.Pages.Signup
 {
     public class SignupModel : PageModel
     {
-        private readonly IConfiguration _configuration;
+        private readonly UserController _userController;
 
-        public SignupModel(IConfiguration configuration)
+        public SignupModel(UserController userContoller)
         {
-            _configuration = configuration;
+            _userController = userContoller;
         }
 
         [BindProperty]
-        public User User { get; set; }
-        
+        public Models.User User { get; set; }
+
 
         public void OnGet()
         {
             
         }
+
         public async Task<IActionResult> OnPostAsync()
         {
-            using (SqlConnection connection = new SqlConnection(_configuration.GetConnectionString("DefaultConnection")))
-            {
-                await connection.OpenAsync();
-                string sql = "INSERT INTO Users (Username, Password) VALUES (@Username, @Password)";
+            var result = await _userController.CreateUserAsync(User.Username, User.Password);
 
-                using (SqlCommand command = new SqlCommand(sql, connection))
-                {
-                    command.Parameters.AddWithValue("@Username", User.Username);
-                    command.Parameters.AddWithValue("@Password", User.Password); 
-                    await command.ExecuteNonQueryAsync();
-                }
+            if (!result.success)
+            {
+                ModelState.AddModelError("User.Username", result.message);
+                return Page();
             }
 
             return RedirectToPage("/Account/Account");
         }
-        
+
     }
 }
