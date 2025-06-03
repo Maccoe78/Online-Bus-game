@@ -21,6 +21,7 @@ namespace OnlineBussen.Pages.Lobby
         public List<User> Players { get; set; } = new List<User>();
         public bool IsHost { get; set; }
         public bool HasJoined { get; set; }
+        public string? ErrorMessage { get; set; }
 
         public async Task<IActionResult> OnGetAsync(int lobbyId)
         {
@@ -52,8 +53,8 @@ namespace OnlineBussen.Pages.Lobby
 
             if (lobby == null || lobby.LobbyPassword != password)
             {
-                TempData["Error"] = "Invalid lobby or password";
-                return RedirectToPage("/Lobby/LobbyDetail");
+                ErrorMessage = $"Password is not correct";
+                return RedirectToPage("/Lobby/LobbyDetail", new { lobbyId });
             }
 
             string currentUsername = HttpContext.Session.GetString("Username");
