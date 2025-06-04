@@ -40,9 +40,15 @@ namespace OnlineBussen.Logic.Controllers
             return await _userService.GetUserByUsernameAsync(username);
         }
 
-        public async Task UpdateUserAsync(User user)
+        public async Task<(bool succes, string message)> UpdateUserAsync(User user, string username)
         {
+            if (await _userService.UsernameExistsAsync(username))
+            {
+                return (false, "A User with that name already exists");
+            }
+
             await _userService.UpdateUserAsync(user);
+            return (true, "User succesfully created");
         }
     }
 }

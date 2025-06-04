@@ -2,6 +2,7 @@
 using Microsoft.Data.SqlClient;
 using Microsoft.Extensions.Configuration;
 using OnlineBussen.Data.Models;
+using System.Data;
 
 namespace OnlineBussen.Data.Repositories
 {
