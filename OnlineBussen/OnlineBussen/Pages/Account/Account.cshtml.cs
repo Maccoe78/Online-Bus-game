@@ -6,6 +6,7 @@ using OnlineBussen.Logic.Models;
 using OnlineBussen.Presentation.Models;
 using Microsoft.Data.SqlClient;
 using Microsoft.AspNetCore.Mvc.ModelBinding.Binders;
+using OnlineBussen.Logic.Controllers;
 
 
 namespace OnlineBussen.Pages.Account
@@ -13,46 +14,20 @@ namespace OnlineBussen.Pages.Account
     [Authentication]
     public class AccountModel : PageModel
     {
-        private readonly IConfiguration _configuration;
-       public User CurrentUser { get; set; }
+        private readonly UserController _userController;
+        public User CurrentUser { get; set; }
 
-        public AccountModel(IConfiguration configuration)
+        public AccountModel(UserController usercontroller)
         {
-            _configuration = configuration;
+            _userController = usercontroller;
            
         }
         public async Task<IActionResult> OnGetAsync()
         {
-            ViewData["Username"] = HttpContext.Session.GetString("Username");
             string username = HttpContext.Session.GetString("Username");
+            ViewData["Username"] = username;
 
-            if (string.IsNullOrEmpty(username))
-            {
-                return RedirectToPage("/Index");
-            }
-
-            using (SqlConnection connection = new SqlConnection(_configuration.GetConnectionString("DefaultConnection")))
-            {
-                await connection.OpenAsync();
-                string sql = "SELECT * FROM Users WHERE Username = @Username";
-
-                using (SqlCommand command = new SqlCommand(sql, connection))
-                {
-                    command.Parameters.AddWithValue("@Username", username);
-                    using (SqlDataReader reader = await command.ExecuteReaderAsync())
-                    {
-                        if (await reader.ReadAsync())
-                        {
-                            CurrentUser = new User
-                            {
-                                UserId = reader.GetInt32(0),
-                                Username = reader.GetString(1)
-                            };
-                        }
-                    }
-                }
-            }
-
+            CurrentUser = await _userController.GetUserByUsernameAsync(username);
             return Page();
         }
     }

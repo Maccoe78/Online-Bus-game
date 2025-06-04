@@ -33,6 +33,7 @@ namespace OnlineBussen.Pages.Lobby
             if (!result.success)
             {
                 ModelState.AddModelError("Lobby.LobbyName", result.message);
+                ViewData["Username"] = username;
                 return Page();
             }
 

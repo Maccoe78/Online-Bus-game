@@ -36,12 +36,20 @@ namespace OnlineBussen.Pages.Account
             if (user != null)
             {
                 await _lobbyController.UpdatePlayerUsernameInLobbiesAsync(currentUsername, username);
-
-                // Then update the user
                 user.Username = username;
                 user.Password = password;
-                await _userController.UpdateUserAsync(user);
 
+                var result = await _userController.UpdateUserAsync(user, username);
+               
+                if (!result.succes)
+                {
+                    ModelState.AddModelError("CurrentUser.Username", result.message);
+
+                    CurrentUser = user;
+                    ViewData["Username"] = currentUsername;
+                    return Page();
+                }
+                
                 // Update session
                 HttpContext.Session.SetString("Username", username);
 
