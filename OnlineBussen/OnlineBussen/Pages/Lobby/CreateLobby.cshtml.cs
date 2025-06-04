@@ -1,8 +1,9 @@
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.Data.SqlClient;
-using OnlineBussen.Controllers;
-using OnlineBussen.Models;
+using OnlineBussen.Logic.Controllers;
+using OnlineBussen.Logic.Models;
+using OnlineBussen.Presentation.Models;
 
 namespace OnlineBussen.Pages.Lobby
 {
@@ -17,7 +18,7 @@ namespace OnlineBussen.Pages.Lobby
         }
 
         [BindProperty]
-        public Models.Lobby Lobby { get; set; }
+        public Logic.Models.Lobby Lobby { get; set; }
 
         public void OnGet()
         {

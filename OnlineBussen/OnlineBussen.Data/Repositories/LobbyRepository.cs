@@ -1,8 +1,9 @@
 ﻿using Microsoft.Data.SqlClient;
-using OnlineBussen.Interfaces;
-using OnlineBussen.Models;
+using Microsoft.Extensions.Configuration;
+using OnlineBussen.Data.Interfaces;
+using OnlineBussen.Data.Models;
 
-namespace OnlineBussen.Repositorys
+namespace OnlineBussen.Data.Repositories
 {
     public class LobbyRepository : ILobbyRepository
     {
@@ -12,6 +13,7 @@ namespace OnlineBussen.Repositorys
         {
             _connectionString = configuration.GetConnectionString("DefaultConnection");
         }
+
         public async Task<int> CreateLobbyAsync(string lobbyName, string lobbyPassword, string username)
         {
             try
@@ -49,6 +51,7 @@ namespace OnlineBussen.Repositorys
                 throw new RepositoryException($"Unexpected error while creating lobby {lobbyName}", ex);
             }
         }
+
         public async Task DeleteLobbyAsync(int lobbyId)
         {
             try
@@ -75,7 +78,7 @@ namespace OnlineBussen.Repositorys
             }
         }
 
-        public async Task<Lobby> GetLobbyByNameAsync(string lobbyName)
+        public async Task<LobbyDTO> GetLobbyByNameAsync(string lobbyName)
         {
             try
             {
@@ -91,7 +94,7 @@ namespace OnlineBussen.Repositorys
                         {
                             if (await reader.ReadAsync())
                             {
-                                return new Lobby
+                                return new LobbyDTO
                                 {
                                     LobbyId = reader.GetInt32(0),
                                     LobbyName = reader.GetString(1),
@@ -113,11 +116,12 @@ namespace OnlineBussen.Repositorys
                 throw new RepositoryException($"Unexpected error while getting lobby with name {lobbyName}", ex);
             }
         }
-        public async Task<IEnumerable<Lobby>> GetAllLobbiesAsync()
+
+        public async Task<IEnumerable<LobbyDTO>> GetAllLobbiesAsync()
         {
             try
             {
-                var lobbies = new List<Lobby>();
+                var lobbies = new List<LobbyDTO>();
                 using (SqlConnection connection = new SqlConnection(_connectionString))
                 {
                     await connection.OpenAsync();
@@ -129,7 +133,7 @@ namespace OnlineBussen.Repositorys
                         {
                             while (await reader.ReadAsync())
                             {
-                                lobbies.Add(new Lobby
+                                lobbies.Add(new LobbyDTO
                                 {
                                     LobbyId = reader.GetInt32(0),
                                     LobbyName = reader.GetString(1),
@@ -154,7 +158,8 @@ namespace OnlineBussen.Repositorys
                 throw new RepositoryException("Unexpected error while getting all lobbies", ex);
             }
         }
-        public async Task<Lobby> GetLobbyByIdAsync(int lobbyId)
+
+        public async Task<LobbyDTO> GetLobbyByIdAsync(int lobbyId)
         {
             try
             {
@@ -170,7 +175,7 @@ namespace OnlineBussen.Repositorys
                         {
                             if (await reader.ReadAsync())
                             {
-                                return new Lobby
+                                return new LobbyDTO
                                 {
                                     LobbyId = reader.GetInt32(0),
                                     LobbyName = reader.GetString(1),
@@ -196,6 +201,7 @@ namespace OnlineBussen.Repositorys
                 throw new RepositoryException($"Unexpected error while getting lobby {lobbyId}", ex);
             }
         }
+
         public async Task UpdateLobbyStatusAsync(int lobbyId, string status)
         {
             try
@@ -222,6 +228,7 @@ namespace OnlineBussen.Repositorys
                 throw new RepositoryException($"Unexpected error while updating status lobby {lobbyId}", ex);
             }
         }
+
         public async Task UpdatePlayerCountAsync(int lobbyId, int playerCount)
         {
             try
@@ -248,6 +255,7 @@ namespace OnlineBussen.Repositorys
                 throw new RepositoryException($"Unexpected error while updating player count of lobby {lobbyId}", ex);
             }
         }
+
         public async Task AddPlayerToLobbyAsync(int lobbyId, string currentUsername)
         {
             try
@@ -282,11 +290,13 @@ namespace OnlineBussen.Repositorys
                 throw new RepositoryException($"Unexpected error while adding player {currentUsername} to lobby {lobbyId}", ex);
             }
         }
+
         public async Task<bool> IsPlayerInLobbyAsync(int lobbyId, string currentUsername)
         {
             var lobby = await GetLobbyByIdAsync(lobbyId);
             return lobby.GetJoinedPlayers().Contains(currentUsername);
         }
+
         public async Task UpdatePlayerUsernameInLobbiesAsync(string oldUsername, string newUsername)
         {
             try
@@ -361,6 +371,7 @@ namespace OnlineBussen.Repositorys
                 throw new RepositoryException($"Unexpected error while updating {oldUsername} to {newUsername} in lobby", ex);
             }
         }
+
         public async Task RemovePlayerFromLobbyAsync(int lobbyId, string username)
         {
             try
@@ -397,6 +408,7 @@ namespace OnlineBussen.Repositorys
                 throw new RepositoryException($"Unexpected error while removing {username} lobby {lobbyId}", ex);
             }
         }
+
         public async Task<bool> LobbyNameExistsAsync(string lobbyName)
         {
             try
@@ -423,6 +435,7 @@ namespace OnlineBussen.Repositorys
                 throw new RepositoryException($"Unexpected error while checking existance of the name of lobby {lobbyName}", ex);
             }
         }
+
         public async Task<int?> GetUserActiveLobbyIdAsync(string username)
         {
             try

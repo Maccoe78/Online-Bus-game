@@ -1,25 +1,25 @@
-﻿using OnlineBussen.Models;
-using OnlineBussen.Interfaces;
-using OnlineBussen.Repositorys;
+﻿using OnlineBussen.Logic.Models;
+using OnlineBussen.Logic.Interfaces;
 
-namespace OnlineBussen.Controllers
+
+namespace OnlineBussen.Logic.Controllers
 {
     public class UserController
     {
-        private readonly IUserRepository _userRepository;
+        private readonly IUserService _userService;
 
-        public UserController(IUserRepository userRepository)
+        public UserController(IUserService userService)
         {
-            _userRepository = userRepository;
+            _userService = userService;
         }
         public async Task<User> AuthenticateUserAsync(string username, string password)
         {
-            return await _userRepository.GetUserByCredentialsAsync(username, password);
+            return await _userService.GetUserByCredentialsAsync(username, password);
         }
 
         public async Task<(bool success, string message)> CreateUserAsync(string username, string password)
         {
-            if (await _userRepository.UsernameExistsAsync(username))
+            if (await _userService.UsernameExistsAsync(username))
             {
                 return (false, "A User with this name already exists");
             }
@@ -31,18 +31,18 @@ namespace OnlineBussen.Controllers
                 CreatedDate = DateTime.Now
             };
 
-            await _userRepository.CreateUserAsync(user);
+            await _userService.CreateUserAsync(user);
             return (true, "User succesfully created");
         }
 
         public async Task<User> GetUserByUsernameAsync(string username)
         {
-            return await _userRepository.GetUserByUsernameAsync(username);
+            return await _userService.GetUserByUsernameAsync(username);
         }
 
         public async Task UpdateUserAsync(User user)
         {
-            await _userRepository.UpdateUserAsync(user);
+            await _userService.UpdateUserAsync(user);
         }
     }
 }

@@ -1,6 +1,6 @@
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
-using OnlineBussen.Models;
+using OnlineBussen.Presentation.Models;
 
 namespace OnlineBussen.Pages.Settings
 {

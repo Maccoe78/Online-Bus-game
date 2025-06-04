@@ -1,8 +1,8 @@
-﻿using OnlineBussen.Models;
+﻿using OnlineBussen.Logic.Models;
 
-namespace OnlineBussen.Interfaces
+namespace OnlineBussen.Logic.Interfaces
 {
-    public interface IUserRepository
+    public interface IUserService
     {
         Task<User> GetUserByUsernameAsync(string username);
         Task<User> GetUserByCredentialsAsync(string username, string password);

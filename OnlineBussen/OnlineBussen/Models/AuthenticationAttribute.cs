@@ -1,7 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc.Filters;
 using Microsoft.AspNetCore.Mvc;
 
-namespace OnlineBussen.Models
+namespace OnlineBussen.Presentation.Models
 {
     [AttributeUsage(AttributeTargets.Class | AttributeTargets.Method)]
     public class AuthenticationAttribute : Attribute, IPageFilter

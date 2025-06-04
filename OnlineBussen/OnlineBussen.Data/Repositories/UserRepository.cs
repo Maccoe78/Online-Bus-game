@@ -1,8 +1,9 @@
-﻿using OnlineBussen.Interfaces;
+﻿using OnlineBussen.Data.Interfaces;
 using Microsoft.Data.SqlClient;
-using OnlineBussen.Models;
+using Microsoft.Extensions.Configuration;
+using OnlineBussen.Data.Models;
 
-namespace OnlineBussen.Repositorys
+namespace OnlineBussen.Data.Repositories
 {
     public class UserRepository : IUserRepository
     {
@@ -12,7 +13,7 @@ namespace OnlineBussen.Repositorys
         {
             _connectionString = configuration.GetConnectionString("DefaultConnection");
         }
-        public async Task<User> GetUserByUsernameAsync(string username)
+        public async Task<UserDTO> GetUserByUsernameAsync(string username)
         {
             using (SqlConnection connection = new SqlConnection(_connectionString))
             {
@@ -26,7 +27,7 @@ namespace OnlineBussen.Repositorys
                     {
                         if (await reader.ReadAsync())
                         {
-                            return new User
+                            return new UserDTO
                             {
                                 UserId = reader.GetInt32(0),
                                 Username = reader.GetString(1),
@@ -38,7 +39,7 @@ namespace OnlineBussen.Repositorys
             }
             return null;
         }
-        public async Task<User> GetUserByCredentialsAsync(string username, string password)
+        public async Task<UserDTO> GetUserByCredentialsAsync(string username, string password)
         {
             using (SqlConnection connection = new SqlConnection(_connectionString))
             {
@@ -53,7 +54,7 @@ namespace OnlineBussen.Repositorys
                     {
                         if (await reader.ReadAsync())
                         {
-                            return new User
+                            return new UserDTO
                             {
                                 UserId = reader.GetInt32(0),
                                 Username = reader.GetString(1),
@@ -65,7 +66,7 @@ namespace OnlineBussen.Repositorys
             }
             return null;
         }
-        public async Task CreateUserAsync(User user)
+        public async Task CreateUserAsync(UserDTO user)
         {
             using (SqlConnection connection = new SqlConnection(_connectionString))
             {
@@ -80,7 +81,7 @@ namespace OnlineBussen.Repositorys
                 }
             }
         }
-        public async Task UpdateUserAsync(User user)
+        public async Task UpdateUserAsync(UserDTO user)
         {
             using (SqlConnection connection = new SqlConnection(_connectionString))
             {

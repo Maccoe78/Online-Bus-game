@@ -1,9 +1,9 @@
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
-using OnlineBussen.Controllers;
-using OnlineBussen.Interfaces;
-using OnlineBussen.Models;
-using OnlineBussen.Repositorys;
+using OnlineBussen.Logic.Controllers;
+using OnlineBussen.Logic.Interfaces;
+using OnlineBussen.Logic.Models;
+using OnlineBussen.Presentation.Models;
 
 namespace OnlineBussen.Pages.Lobby
 {
@@ -17,7 +17,7 @@ namespace OnlineBussen.Pages.Lobby
             _lobbyController = lobbyController;
         }
 
-        public Models.Lobby Lobby { get; set; }
+        public Logic.Models.Lobby Lobby { get; set; }
         public List<User> Players { get; set; } = new List<User>();
         public bool IsHost { get; set; }
         public bool HasJoined { get; set; }

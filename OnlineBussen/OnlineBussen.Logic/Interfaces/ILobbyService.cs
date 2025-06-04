@@ -1,15 +1,14 @@
-﻿using OnlineBussen.Models;
+﻿using OnlineBussen.Logic.Models;
 
-namespace OnlineBussen.Interfaces
+namespace OnlineBussen.Logic.Interfaces
 {
-    public interface ILobbyRepository
+    public interface ILobbyService
     {
         Task<int> CreateLobbyAsync(string lobbyName, string lobbyPassword, string username);
         Task DeleteLobbyAsync(int lobbyId);
-        Task<Models.Lobby> GetLobbyByNameAsync(string lobbyName);
-        Task<IEnumerable<Models.Lobby>> GetAllLobbiesAsync();
+        Task<Lobby> GetLobbyByNameAsync(string lobbyName);
+        Task<IEnumerable<Lobby>> GetAllLobbiesAsync();
         Task UpdateLobbyStatusAsync(int lobbyId, string status);
-        Task UpdatePlayerCountAsync(int lobbyId, int playerCount);
         Task<Lobby> GetLobbyByIdAsync(int lobbyId);
         Task AddPlayerToLobbyAsync(int lobbyId, string username);
         Task<bool> IsPlayerInLobbyAsync(int lobbyId, string username);
