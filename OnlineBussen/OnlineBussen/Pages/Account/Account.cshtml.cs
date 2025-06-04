@@ -2,7 +2,8 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.Extensions.Configuration;
 using MySqlConnector;
-using OnlineBussen.Models;
+using OnlineBussen.Logic.Models;
+using OnlineBussen.Presentation.Models;
 using Microsoft.Data.SqlClient;
 using Microsoft.AspNetCore.Mvc.ModelBinding.Binders;
 

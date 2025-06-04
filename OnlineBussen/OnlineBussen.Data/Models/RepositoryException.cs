@@ -1,4 +1,4 @@
-﻿namespace OnlineBussen.Models
+﻿namespace OnlineBussen.Data.Models
 {
     public class RepositoryException : Exception
     {

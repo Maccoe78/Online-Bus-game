@@ -1,8 +1,8 @@
 ﻿using System.Text.Json;
 
-namespace OnlineBussen.Models
+namespace OnlineBussen.Data.Models
 {
-    public class Lobby
+    public class LobbyDTO
     {
         public int LobbyId { get; set; }
         public string LobbyName { get; set; }
@@ -11,23 +11,11 @@ namespace OnlineBussen.Models
         public string Host { get; set; }
         public string Status { get; set; }
         public int AmountOfPlayers { get; set; }
-        private string _joinedPlayers { get; set; } = "[]";
-        public string JoinedPlayers
-        {
-            get => _joinedPlayers;
-            set => _joinedPlayers = string.IsNullOrEmpty(value) ? "[]" : value;
-        }
+        public string JoinedPlayers { get; set; } = "[]";
 
         public List<string> GetJoinedPlayers()
         {
-            try
-            {
-                return JsonSerializer.Deserialize<List<string>>(JoinedPlayers) ?? new List<string>();
-            }
-            catch
-            {
-                return new List<string>();
-            }
+            return System.Text.Json.JsonSerializer.Deserialize<List<string>>(JoinedPlayers);
         }
 
         public void AddPlayer(string username)
@@ -36,7 +24,7 @@ namespace OnlineBussen.Models
             if (!players.Contains(username))
             {
                 players.Add(username);
-                JoinedPlayers = JsonSerializer.Serialize(players);
+                JoinedPlayers = System.Text.Json.JsonSerializer.Serialize(players);
             }
         }
     }

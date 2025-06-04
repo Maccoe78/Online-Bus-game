@@ -1,11 +1,12 @@
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using MySqlConnector;
-using OnlineBussen.Models;
+using OnlineBussen.Presentation.Models;
 using System.Numerics;
 using Microsoft.Data.SqlClient;
 using Microsoft.Extensions.Configuration;
-using OnlineBussen.Controllers;
+using OnlineBussen.Logic.Controllers;
+using OnlineBussen.Logic.Models;
 
 
 namespace OnlineBussen.Pages.Signup
@@ -20,7 +21,7 @@ namespace OnlineBussen.Pages.Signup
         }
 
         [BindProperty]
-        public Models.User User { get; set; }
+        public Logic.Models.User User { get; set; }
 
 
         public void OnGet()

@@ -1,7 +1,8 @@
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
-using OnlineBussen.Controllers;
-using OnlineBussen.Models;
+using OnlineBussen.Logic.Controllers;
+using OnlineBussen.Logic.Models;
+using OnlineBussen.Presentation.Models;
 
 namespace OnlineBussen.Pages.Account
 {

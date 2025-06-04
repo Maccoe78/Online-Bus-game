@@ -1,4 +1,4 @@
-﻿namespace OnlineBussen.Models
+﻿namespace OnlineBussen.Logic.Models
 {
     public class User
     {

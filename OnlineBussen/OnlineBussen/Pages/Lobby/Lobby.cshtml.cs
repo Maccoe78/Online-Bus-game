@@ -1,7 +1,8 @@
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
-using OnlineBussen.Controllers;
-using OnlineBussen.Models;
+using OnlineBussen.Logic.Controllers;
+using OnlineBussen.Logic.Models;
+using OnlineBussen.Presentation.Models;
 
 namespace OnlineBussen.Pages.Lobby
 {
@@ -15,7 +16,7 @@ namespace OnlineBussen.Pages.Lobby
             _lobbyController = lobbyController;
         }
 
-        public IEnumerable<Models.Lobby> Lobbies { get; set; }
+        public IEnumerable<Logic.Models.Lobby> Lobbies { get; set; }
 
         public async Task<IActionResult> OnGetAsync()
         {
