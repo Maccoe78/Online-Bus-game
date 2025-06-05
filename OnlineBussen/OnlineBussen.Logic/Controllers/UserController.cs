@@ -48,7 +48,7 @@ namespace OnlineBussen.Logic.Controllers
             }
 
             await _userService.UpdateUserAsync(user);
-            return (true, "User succesfully created");
+            return (true, "User succesfully updated");
         }
     }
 }
