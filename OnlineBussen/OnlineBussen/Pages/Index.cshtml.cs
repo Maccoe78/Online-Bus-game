@@ -30,14 +30,13 @@ namespace OnlineBussen.Pages
         {
             var user = await _userController.AuthenticateUserAsync(Username, Password);
 
-            if (user != null)
+            if (user == null)
             {
-                HttpContext.Session.SetString("Username", Username);
-                return RedirectToPage("/Account/Account");
+                ModelState.AddModelError("Username", "Invalid username or password");
+                return Page();
             }
-
-            ModelState.AddModelError(string.Empty, "Invalid login attempt");
-            return Page();
+            HttpContext.Session.SetString("Username", Username);
+            return RedirectToPage("/Account/Account");
         }
         public IActionResult OnGetLogout()
         {
