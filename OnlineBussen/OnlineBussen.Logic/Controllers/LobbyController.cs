@@ -43,8 +43,6 @@ namespace OnlineBussen.Logic.Controllers
         {
             await _lobbyService.UpdateLobbyStatusAsync(lobbyId, status);
         }
-
-        
         public async Task AddPlayerToLobbyAsync(int lobbyId, string username)
         {
             await _lobbyService.AddPlayerToLobbyAsync(lobbyId, username);
