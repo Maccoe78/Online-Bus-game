@@ -11,21 +11,37 @@ namespace OnlineBussen.Data.Models
         public string Host { get; set; }
         public string Status { get; set; }
         public int AmountOfPlayers { get; set; }
-        public string JoinedPlayers { get; set; } = "[]";
+        public string JoinedPlayers { get; set; } = string.Empty;
 
-        public List<string> GetJoinedPlayers()
+        public List<UserDTO> GetJoinedUsers()
         {
-            return System.Text.Json.JsonSerializer.Deserialize<List<string>>(JoinedPlayers);
-        }
+            if (string.IsNullOrEmpty(JoinedPlayers))
+                return new List<UserDTO>();
 
-        public void AddPlayer(string username)
-        {
-            var players = GetJoinedPlayers();
-            if (!players.Contains(username))
+            try
             {
-                players.Add(username);
-                JoinedPlayers = System.Text.Json.JsonSerializer.Serialize(players);
+                // Probeer JSON deserialisatie (nieuwe format)
+                if (JoinedPlayers.StartsWith("["))
+                {
+                    return JsonSerializer.Deserialize<List<UserDTO>>(JoinedPlayers) ?? new List<UserDTO>();
+                }
+                else
+                {
+                    // Oude format (comma separated) - backwards compatibility
+                    var usernames = JoinedPlayers.Split(',', StringSplitOptions.RemoveEmptyEntries);
+                    return usernames.Select(username => new UserDTO { Username = username.Trim() }).ToList();
+                }
+            }
+            catch
+            {
+                return new List<UserDTO>();
             }
         }
+        public List<string> GetJoinedPlayers()
+        {
+            return GetJoinedUsers().Select(u => u.Username).ToList();
+        }
+
+        
     }
 }
