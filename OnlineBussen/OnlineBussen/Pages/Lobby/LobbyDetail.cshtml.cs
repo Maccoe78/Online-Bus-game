@@ -23,6 +23,9 @@ namespace OnlineBussen.Pages.Lobby
         public bool HasJoined { get; set; }
         public string? ErrorMessage { get; set; }
 
+        [BindProperty]
+        public string Password { get; set; }
+
         public async Task<IActionResult> OnGetAsync(int lobbyId)
         {
             string currentUsername = HttpContext.Session.GetString("Username");
@@ -50,14 +53,23 @@ namespace OnlineBussen.Pages.Lobby
         public async Task<IActionResult> OnPostJoinLobbyAsync(int lobbyId, string password)
         {
             var lobby = await _lobbyController.GetLobbyByIdAsync(lobbyId);
+            string currentUsername = HttpContext.Session.GetString("Username");
 
             if (lobby == null || lobby.LobbyPassword != password)
             {
-                ErrorMessage = $"Password is not correct";
-                return RedirectToPage("/Lobby/LobbyDetail", new { lobbyId });
+                ModelState.AddModelError("Password", "Password is not correct");
+
+                Lobby = lobby ?? await _lobbyController.GetLobbyByIdAsync(lobbyId);
+
+                
+                ViewData["Username"] = currentUsername;
+                IsHost = currentUsername == Lobby.Host;
+                HasJoined = Lobby.GetJoinedPlayers().Contains(currentUsername);
+
+                return Page();
             }
 
-            string currentUsername = HttpContext.Session.GetString("Username");
+            
             await _lobbyController.AddPlayerToLobbyAsync(lobbyId, currentUsername);
 
             // Refresh the lobby data after joining

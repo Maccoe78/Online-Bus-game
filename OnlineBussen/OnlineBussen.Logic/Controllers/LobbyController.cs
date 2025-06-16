@@ -26,6 +26,7 @@ namespace OnlineBussen.Logic.Controllers
         {
             await _lobbyService.DeleteLobbyAsync(lobbyId);
         }
+
         public async Task<Lobby> GetLobbyByNameAsync(string lobbyName)
         {
             return await _lobbyService.GetLobbyByNameAsync(lobbyName);
