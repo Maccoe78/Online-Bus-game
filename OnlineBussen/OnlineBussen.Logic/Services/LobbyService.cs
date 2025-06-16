@@ -14,10 +14,12 @@ namespace OnlineBussen.Logic.Services
     public class LobbyService : ILobbyService
     {
         private readonly ILobbyRepository _lobbyRepository;
+        //private readonly IUserRepository _userRepository;
 
         public LobbyService(ILobbyRepository lobbyRepository)
         {
             _lobbyRepository = lobbyRepository;
+            //_userRepository = userRepository;
         }
 
         public async Task<int> CreateLobbyAsync(string lobbyName, string lobbyPassword, string username)

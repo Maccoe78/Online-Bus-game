@@ -21,13 +21,13 @@
             </div>
 
             <!-- Other Players -->
-            @foreach (var username in Model.Lobby.GetJoinedPlayers())
+            @foreach (var username in Model.Lobby.GetJoinedUsers())
             {
-                @if (username != Model.Lobby.Host)
+                @if (username.Username != Model.Lobby.Host)
                 {
                     <div class="border-b border-bus-gold/30">
                         <div class="flex justify-between py-2">
-                            <span class="text-bus-gold">@username</span>
+                            <span class="text-bus-gold">@username.Username</span>
                             <span class="text-[#C5B351]">Joined</span>
                         </div>
                     </div>

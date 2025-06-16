@@ -40,7 +40,7 @@ namespace OnlineBussen.Pages.Lobby
 
             IsHost = currentUsername == Lobby.Host;
 
-            HasJoined = Lobby.GetJoinedPlayers().Contains(currentUsername);
+            HasJoined = Lobby.GetJoinedUsers().Any(u => u.Username == currentUsername);
 
             return Page();
         }
@@ -64,7 +64,7 @@ namespace OnlineBussen.Pages.Lobby
                 
                 ViewData["Username"] = currentUsername;
                 IsHost = currentUsername == Lobby.Host;
-                HasJoined = Lobby.GetJoinedPlayers().Contains(currentUsername);
+                HasJoined = Lobby.GetJoinedUsers().Any(u => u.Username == currentUsername);
 
                 return Page();
             }

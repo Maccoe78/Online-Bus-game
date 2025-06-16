@@ -8,10 +8,12 @@ namespace OnlineBussen.Data.Repositories
     public class LobbyRepository : ILobbyRepository
     {
         private readonly string _connectionString;
+        private readonly IUserRepository _userRepository;
 
-        public LobbyRepository(IConfiguration configuration)
+        public LobbyRepository(IConfiguration configuration, IUserRepository userRepository)
         {
             _connectionString = configuration.GetConnectionString("DefaultConnection");
+            _userRepository = userRepository;
         }
 
         public async Task<int> CreateLobbyAsync(string lobbyName, string lobbyPassword, string username)
@@ -21,14 +23,17 @@ namespace OnlineBussen.Data.Repositories
                 using (SqlConnection connection = new SqlConnection(_connectionString))
                 {
                     await connection.OpenAsync();
+
+                    var hostUser = await _userRepository.GetUserByUsernameAsync(username);
+
                     string sql = @"INSERT INTO Lobbys (LobbyName, LobbyPassword, CreatedDate, Status, AmountOfPlayers, Host, JoinedPlayers) 
                       VALUES (@LobbyName, @LobbyPassword, @CreatedDate, @Status, @AmountOfPlayers, @Host, @JoinedPlayers);
                       SELECT CAST(SCOPE_IDENTITY() as int)";
 
                     using (SqlCommand command = new SqlCommand(sql, connection))
                     {
-                        var initialPlayers = new List<string> { username }; // Host is eerste speler
-                        var joinedPlayersJson = System.Text.Json.JsonSerializer.Serialize(initialPlayers);
+                        var initialUsers = new List<UserDTO> { hostUser }; // Host is eerste speler
+                        var joinedPlayersJson = System.Text.Json.JsonSerializer.Serialize(initialUsers);
 
                         command.Parameters.AddWithValue("@LobbyName", lobbyName);
                         command.Parameters.AddWithValue("@LobbyPassword", lobbyPassword);
@@ -264,20 +269,49 @@ namespace OnlineBussen.Data.Repositories
                 {
                     await connection.OpenAsync();
 
+                    // Haal User object op via dependency injection
+                    var user = await _userRepository.GetUserByUsernameAsync(currentUsername);
                     var lobby = await GetLobbyByIdAsync(lobbyId);
-                    lobby.AddPlayer(currentUsername);
 
-                    string sql = @"UPDATE Lobbys 
+                    // Deserialize bestaande users
+                    var users = new List<UserDTO>();
+                    if (!string.IsNullOrEmpty(lobby.JoinedPlayers))
+                    {
+                        try
+                        {
+                            users = System.Text.Json.JsonSerializer.Deserialize<List<UserDTO>>(lobby.JoinedPlayers) ?? new List<UserDTO>();
+                        }
+                        catch
+                        {
+                            // Backwards compatibility voor comma-separated format
+                            var usernames = lobby.JoinedPlayers.Split(',', StringSplitOptions.RemoveEmptyEntries);
+                            foreach (var username in usernames)
+                            {
+                                var existingUser = await _userRepository.GetUserByUsernameAsync(username.Trim());
+                                if (existingUser != null)
+                                    users.Add(existingUser);
+                            }
+                        }
+                    }
+
+                    // Voeg nieuwe user toe als die er nog niet is
+                    if (!users.Any(u => u.Username == currentUsername))
+                    {
+                        users.Add(user);
+                        string updatedUsersJson = System.Text.Json.JsonSerializer.Serialize(users);
+
+                        string sql = @"UPDATE Lobbys 
                       SET JoinedPlayers = @JoinedPlayers,
-                          AmountOfPlayers = (SELECT COUNT(*) FROM OPENJSON(@JoinedPlayers))
+                          AmountOfPlayers = @AmountOfPlayers
                       WHERE LobbyId = @LobbyId";
 
-                    using (SqlCommand command = new SqlCommand(sql, connection))
-                    {
-                        command.Parameters.AddWithValue("@LobbyId", lobbyId);
-                        command.Parameters.AddWithValue("@JoinedPlayers", lobby.JoinedPlayers);
-                        command.Parameters.AddWithValue("@AmountOfPlayers", lobby.AmountOfPlayers);
-                        await command.ExecuteNonQueryAsync();
+                        using (SqlCommand command = new SqlCommand(sql, connection))
+                        {
+                            command.Parameters.AddWithValue("@LobbyId", lobbyId);
+                            command.Parameters.AddWithValue("@JoinedPlayers", updatedUsersJson);
+                            command.Parameters.AddWithValue("@AmountOfPlayers", users.Count);
+                            await command.ExecuteNonQueryAsync();
+                        }
                     }
                 }
             }
