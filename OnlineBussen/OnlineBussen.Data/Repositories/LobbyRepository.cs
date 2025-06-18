@@ -269,7 +269,7 @@ namespace OnlineBussen.Data.Repositories
                 {
                     await connection.OpenAsync();
 
-                    // Haal User object op via dependency injection
+                    
                     var user = await _userRepository.GetUserByUsernameAsync(currentUsername);
                     var lobby = await GetLobbyByIdAsync(lobbyId);
 
@@ -283,7 +283,6 @@ namespace OnlineBussen.Data.Repositories
                         }
                         catch
                         {
-                            // Backwards compatibility voor comma-separated format
                             var usernames = lobby.JoinedPlayers.Split(',', StringSplitOptions.RemoveEmptyEntries);
                             foreach (var username in usernames)
                             {

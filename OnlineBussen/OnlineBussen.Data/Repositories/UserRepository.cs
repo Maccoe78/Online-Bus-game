@@ -42,30 +42,43 @@ namespace OnlineBussen.Data.Repositories
         }
         public async Task<UserDTO> GetUserByCredentialsAsync(string username, string password)
         {
-            using (SqlConnection connection = new SqlConnection(_connectionString))
+            try
             {
-                await connection.OpenAsync();
-                string sql = "SELECT * FROM Users WHERE Username = @Username AND Password = @Password";
-
-                using (SqlCommand command = new SqlCommand(sql, connection))
+                using (SqlConnection connection = new SqlConnection(_connectionString))
                 {
-                    command.Parameters.AddWithValue("@Username", username);
-                    command.Parameters.AddWithValue("@Password", password);
-                    using (SqlDataReader reader = await command.ExecuteReaderAsync())
+                    await connection.OpenAsync();
+                    string sql = "SELECT * FROM Users WHERE Username = @Username AND Password = @Password";
+
+                    using (SqlCommand command = new SqlCommand(sql, connection))
                     {
-                        if (await reader.ReadAsync())
+                        command.Parameters.AddWithValue("@Username", username);
+                        command.Parameters.AddWithValue("@Password", password);
+                        using (SqlDataReader reader = await command.ExecuteReaderAsync())
                         {
-                            return new UserDTO
+                            if (await reader.ReadAsync())
                             {
-                                UserId = reader.GetInt32(0),
-                                Username = reader.GetString(1),
-                                Password = reader.GetString(2)
-                            };
+                                return new UserDTO
+                                {
+                                    UserId = reader.GetInt32(0),
+                                    Username = reader.GetString(1),
+                                    Password = reader.GetString(2)
+                                };
+                            }
                         }
                     }
                 }
+                return null;
             }
-            return null;
+            catch (SqlException ex)
+            {
+                // Gooi een RepositoryException voor database problemen
+                throw new RepositoryException($"Database error while retrieving user credentials");
+            }
+            catch (Exception ex)
+            {
+                // Gooi een RepositoryException voor andere problemen
+                throw new RepositoryException($"Unexpected error while retrieving user credentials: {ex.Message}", ex);
+            }
         }
         public async Task CreateUserAsync(UserDTO user)
         {
